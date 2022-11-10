@@ -11,9 +11,10 @@ from src.util import dump_csv
 
 
 def top_k_recommendations(liked_course, k, subjects):
-    config = json.load(open("./config.json"))
     subject_list = subjects.split(',')
-    obj = fetch_SchedGo(config, "ucdavis", 202301, subject_list)
+    # config = json.load(open("./config.json"))
+    # obj = fetch_SchedGo(config, "ucdavis", 202301, subject_list)
+    obj = json.load(open("./data/ecs_mat_sta.json"))
 
     # save some memory
     df = pd.DataFrame(obj)
